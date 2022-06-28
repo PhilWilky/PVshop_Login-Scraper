@@ -39,12 +39,13 @@ with sync_playwright() as p:
     print(len(items), 'product(s) found.')
     df.set_index('name', inplace=True)
     for item in items:
-        # Returns a datetime object containing the local date and time
-        dateTimeObj = datetime.now()
-        # get the time object from datetime object
-        timeObj = dateTimeObj.time()
+        ## Returns a datetime object containing the local date and time
+        #dateTimeObj = datetime.now()
+        ## get the time object from datetime object
+        # timeObj = dateTimeObj.time()
         print(
-            f'{timeObj}- Extracting price for product {item} ({counter}/{len(items)})...'
+            #f'{timeObj}- Extracting price for product {item} ({counter}/{len(items)})...'
+            f'Extracting price for product {item} ({counter}/{len(items)})...'
         )
         url = page.locator("[placeholder=\"Type to search \\.\\.\\.\"]").fill(
             item)
